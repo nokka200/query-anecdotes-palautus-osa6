@@ -4,7 +4,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { getAnecdotes } from './services/requests'
 
 const App = () => {
-
+  
   const handleVote = (anecdote) => {
     console.log('vote')
   }
