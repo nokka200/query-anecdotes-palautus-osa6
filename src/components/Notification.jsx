@@ -13,13 +13,23 @@ const Notification = () => {
   console.log('notification', notification)
 
 
-  if (notification === null || notification.length < 5) {
+  if (notification === "null") {
     console.log('notification is null')
     return null
+  } else if (notification.length < 5) {
+    setTimeout(() => { 
+      console.log('clear')
+      dispatch( { type: 'CLEAR_NOTIFICATION', data: "null" } );
+    }, 5000)
+      return (
+        <div style={style}>
+          <p>too short anecdote, must have length 5 or more</p>
+        </div>
+      )
   } else {
     setTimeout(() => { 
       console.log('clear')
-      dispatch( { type: 'CLEAR_NOTIFICATION', data: null } );
+      dispatch( { type: 'CLEAR_NOTIFICATION', data: "null" } );
     }, 5000)
     return (
       <div style={style}>
